@@ -1,0 +1,221 @@
+media:
+  input: public/assets
+  output: /assets
+  categories: [image]
+
+content:
+  - name: blog
+    label: Blog & Artikel
+    type: collection
+    path: src/content/blog
+    filename: "{fields.title}.md"
+    view:
+      fields: [title, category, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Judul Artikel
+        type: string
+        required: true
+      - name: seoTitle
+        label: SEO Title (Meta Title)
+        type: string
+        required: true
+      - name: description
+        label: Ringkasan / Meta Description
+        type: text
+        required: true
+      - name: date
+        label: Tanggal Publikasi
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: category
+        label: Kategori
+        type: string
+        default: Branding
+      - name: author
+        label: Penulis
+        type: string
+        default: Eiko Visual
+      - name: authorRole
+        label: Role Penulis
+        type: string
+        default: Brand Strategist
+      - name: authorAvatar
+        label: Foto Penulis
+        type: image
+        default: /assets/blog/author-avatar.webp
+      - name: featuredImage
+        label: Gambar Utama (Featured Image)
+        type: image
+        required: true
+      - name: ctaHeading
+        label: Judul CTA Bawah (Opsional)
+        type: string
+      - name: ctaDescription
+        label: Deskripsi CTA Bawah (Opsional)
+        type: text
+      - name: faqs
+        label: FAQ Artikel (Opsional)
+        type: object
+        list: true
+        fields:
+          - name: question
+            label: Pertanyaan
+            type: string
+            required: true
+          - name: answer
+            label: Jawaban
+            type: text
+            required: true
+      - name: body
+        label: Isi Artikel
+        type: rich-text
+
+  - name: projects
+    label: Portfolio Projects
+    type: collection
+    path: src/content/projects
+    view:
+      fields: [cardTitle, clientName, order, featuredOnHome]
+      primary: cardTitle
+      sort: [order, cardTitle]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Judul Project
+        type: string
+        required: true
+      - name: seoTitle
+        label: SEO Title
+        type: string
+        required: true
+      - name: metaDescription
+        label: Meta Description
+        type: text
+      - name: slug
+        label: URL Slug (misal nama-project-details)
+        type: string
+        required: true
+      - name: cardTitle
+        label: Judul di Card
+        type: string
+        required: true
+      - name: cardSummary
+        label: Ringkasan di Card
+        type: text
+        required: true
+      - name: cardImage
+        label: Gambar Card
+        type: image
+        required: true
+      - name: cardTags
+        label: Tags
+        type: string
+        list: true
+      - name: order
+        label: Urutan Tampil
+        type: number
+        required: true
+      - name: featuredOnHome
+        label: Tampilkan di Homepage
+        type: boolean
+        default: false
+      - name: yearBadge
+        label: Badge Tahun
+        type: string
+        default: "©2025"
+      - name: heroTitlePrefix
+        label: Hero Title (Bagian Awal)
+        type: string
+        required: true
+      - name: heroTitleHighlight
+        label: Hero Title (Bagian Highlight)
+        type: string
+        required: true
+      - name: topGallery
+        label: Galeri Atas (2 Gambar)
+        type: image
+        list: true
+      - name: summaryText
+        label: Ringkasan Proyek
+        type: text
+        required: true
+      - name: clientName
+        label: Nama Klien
+        type: string
+        required: true
+      - name: clientScope
+        label: Layanan / Scope
+        type: string
+        required: true
+      - name: projectDate
+        label: Tanggal Proyek
+        type: string
+        required: true
+      - name: middleGalleryRow1
+        label: Galeri Tengah Baris 1
+        type: image
+        list: true
+      - name: challengeText
+        label: Tantangan Kami
+        type: text
+        required: true
+      - name: deliverables
+        label: Deliverables
+        type: string
+        list: true
+      - name: middleGalleryRow2
+        label: Galeri Tengah Baris 2 (Opsional)
+        type: image
+        list: true
+      - name: solutionHeading
+        label: Judul Bagian Solusi
+        type: string
+        default: Solusi Kami
+      - name: solutionHtml
+        label: Penjelasan Solusi
+        type: text
+        required: true
+      - name: valuePoints
+        label: Poin Nilai (Value Points)
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Judul Poin
+            type: string
+            required: true
+          - name: description
+            label: Deskripsi
+            type: text
+            required: true
+      - name: ctaBadge2
+        label: Badge CTA Bawah
+        type: string
+        default: Digital Agency
+      - name: ctaHeading
+        label: Judul CTA Bawah
+        type: string
+        required: true
+      - name: ctaDescription
+        label: Deskripsi CTA Bawah (Opsional)
+        type: text
+      - name: relatedArticlesHeadingPrefix
+        label: Judul Artikel Terkait (Awal, Opsional)
+        type: string
+      - name: relatedArticlesHeadingHighlight
+        label: Judul Artikel Terkait (Highlight, Opsional)
+        type: string
+      - name: relatedArticleSlugs
+        label: Slug Artikel Terkait (Opsional)
+        type: string
+        list: true

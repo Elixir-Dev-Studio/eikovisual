@@ -1,0 +1,68 @@
+name: Build & Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro static site
+        run: npm run build
+
+      - name: Deploy dist/ to cPanel via SSH rsync
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+
+          eval "$(ssh-agent -s)"
+          if [ -n "$SSH_PASSPHRASE" ]; then
+            cat << 'EOF' > /tmp/askpass.sh
+          #!/bin/sh
+          printf '%s\n' "$SSH_PASSPHRASE"
+          EOF
+            chmod +x /tmp/askpass.sh
+            DISPLAY=:0 SSH_ASKPASS=/tmp/askpass.sh SSH_ASKPASS_REQUIRE=force ssh-add ~/.ssh/deploy_key < /dev/null
+            rm -f /tmp/askpass.sh
+          else
+            ssh-add ~/.ssh/deploy_key
+          fi
+
+          ssh -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "mkdir -p ~/public_html/astro_dist/dist"
+          rsync -avz --delete \
+            --exclude='.well-known/' \
+            --exclude='cgi-bin/' \
+            --exclude='.htaccess' \
+            -e "ssh -p $SSH_PORT" \
+            dist/ "$SSH_USER@$SSH_HOST:~/public_html/astro_dist/dist/"

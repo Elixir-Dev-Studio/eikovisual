@@ -35,4 +35,16 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'always',
   },
+  server: {
+    host: true,
+    allowedHosts: true,
+  },
+  vite: {
+    server: {
+      allowedHosts: true,
+    },
+    preview: {
+      allowedHosts: true,
+    },
+  },
 });
