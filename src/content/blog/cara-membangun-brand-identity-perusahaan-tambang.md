@@ -49,7 +49,7 @@ Langkah awal adalah melihat kondisi saat ini: logo yang dipakai, dokumen yang be
 
 **Pertanyaan yang dijawab:** Apa yang sudah ada, apa yang tidak selaras, dan apa yang perlu dipertahankan?
 
-#### ++**Tahap 2: Brand Positioning**++
+#### **Tahap 2: Brand Positioning**
 
 Sebelum membuat desain, tentukan dulu posisi perusahaan. Misalnya:
 
@@ -59,7 +59,7 @@ Sebelum membuat desain, tentukan dulu posisi perusahaan. Misalnya:
 
 Posisi yang jelas membuat keputusan desain lebih terarah, bukan sekadar selera.
 
-#### ++**Tahap 3: Brand Identity**++
+#### **Tahap 3: Brand Identity**
 
 Pada tahap ini elemen visual dirancang:
 
@@ -71,7 +71,7 @@ Pada tahap ini elemen visual dirancang:
 
 Untuk tambang, logo perlu diuji agar tetap terbaca saat kecil, di atas warna gelap, dan pada media kasar seperti bordir, cetak, atau cat kendaraan.
 
-#### ++**Tahap 4: Brand Touchpoints**++
+#### **Tahap 4: Brand Touchpoints**
 
 Identitas yang sudah jadi kemudian diterapkan ke media yang dipakai sehari-hari. Untuk perusahaan tambang, daftar prioritasnya biasanya:
 
@@ -80,20 +80,20 @@ Identitas yang sudah jadi kemudian diterapkan ke media yang dipakai sehari-hari.
 - **3. Lapangan:** helm, seragam, rompi, papan nama dan rambu, kendaraan
 - **4. Acara:** booth, spanduk, cinderamata
 
-#### ++**Tahap 5: Brand Rollout**++
+#### **Tahap 5: Brand Rollout**
 
 Tahap ini sering terlewat. Rollout adalah proses meluncurkan identitas baru ke seluruh perusahaan: mensosialisasikan ke tim, membagikan template dan file, serta menyusun jadwal penggantian materi lama secara bertahap.
 
 Tanpa rollout, brand guideline yang bagus hanya akan tersimpan di folder.
 
-### ++**Elemen yang Perlu Diperhatikan Khusus di Industri Tambang**++
+### **Elemen yang Perlu Diperhatikan Khusus di Industri Tambang**
 
 - **Ketahanan di lapangan.** Logo dan warna harus tetap jelas pada debu, cuaca, dan jarak pandang.
 - **Keselarasan dengan standar keselamatan.** Penggunaan warna pada area kerja perlu memperhatikan aturan keselamatan yang berlaku, sehingga identitas perusahaan tidak bertabrakan dengan rambu K3.
 - **Kesan bertanggung jawab.** Gaya visual yang tepat membantu menyampaikan komitmen perusahaan terhadap lingkungan dan masyarakat.
 - **Keseragaman antar lokasi.** Kantor pusat, area operasional, dan kontraktor tampil dalam satu bahasa visual.
 
-### ++**Berapa Lama Prosesnya?**++
+### **Berapa Lama Prosesnya?**
 
 Lamanya tergantung skala perusahaan dan banyaknya titik temu yang dikerjakan. Proyek yang mencakup identitas, panduan, dan beberapa media biasanya berlangsung dalam hitungan minggu hingga beberapa bulan. Rentang waktu pastinya sebaiknya dibahas dalam konsultasi awal.
 
