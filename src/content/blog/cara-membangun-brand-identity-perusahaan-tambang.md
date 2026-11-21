@@ -1,7 +1,7 @@
 ---
 title: Cara Membangun Brand Identity Perusahaan Tambang
 seoTitle: Cara Kita Membangun Brand Identity Perusahaan Tambang - Eiko Visual -
-  Your Branding Partner
+  Your Branding Partner .
 description: Membangun brand identity untuk perusahaan tambang tidak sama dengan
   merancang logo untuk kafe atau toko. Identitasnya harus terasa kuat dan
   tepercaya, mudah dipakai di lapangan, dan konsisten di dokumen resmi.
