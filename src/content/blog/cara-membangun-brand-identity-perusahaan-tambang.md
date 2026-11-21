@@ -43,7 +43,7 @@ Untuk perusahaan tambang yang punya banyak titik temu, brand identity lengkap ja
 
 ## 5 Tahap Membangun Brand Identity Perusahaan Tambang
 
-#### ++**Tahap 1: Brand Audit**++
+#### **Tahap 1: Brand Audit**
 
 Langkah awal adalah melihat kondisi saat ini: logo yang dipakai, dokumen yang beredar, tampilan website dan media sosial, serta materi di lapangan. Audit juga melihat bagaimana kompetitor tampil, supaya Anda tahu ruang untuk berbeda.
 
