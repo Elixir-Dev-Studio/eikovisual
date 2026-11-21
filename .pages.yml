@@ -1,7 +1,14 @@
 media:
-  input: public/assets
-  output: /assets
-  categories: [image]
+  - name: blog
+    label: Gambar Blog
+    input: public/assets/blog
+    output: /assets/blog
+    categories: [image]
+  - name: projects
+    label: Gambar Projects
+    input: public/assets/projects
+    output: /assets/projects
+    categories: [image]
 
 content:
   - name: blog
@@ -51,10 +58,14 @@ content:
         label: Foto Penulis
         type: image
         default: /assets/blog/author-avatar.webp
+        options:
+          media: blog
       - name: featuredImage
         label: Gambar Utama (Featured Image)
         type: image
         required: true
+        options:
+          media: blog
       - name: ctaHeading
         label: Judul CTA Bawah (Opsional)
         type: string
@@ -77,6 +88,8 @@ content:
       - name: body
         label: Isi Artikel
         type: rich-text
+        options:
+          media: blog
 
   - name: projects
     label: Portfolio Projects
@@ -117,6 +130,8 @@ content:
         label: Gambar Card
         type: image
         required: true
+        options:
+          media: projects
       - name: cardTags
         label: Tags
         type: string
@@ -145,6 +160,8 @@ content:
         label: Galeri Atas (2 Gambar)
         type: image
         list: true
+        options:
+          media: projects
       - name: summaryText
         label: Ringkasan Proyek
         type: text
@@ -165,6 +182,8 @@ content:
         label: Galeri Tengah Baris 1
         type: image
         list: true
+        options:
+          media: projects
       - name: challengeText
         label: Tantangan Kami
         type: text
@@ -177,6 +196,8 @@ content:
         label: Galeri Tengah Baris 2 (Opsional)
         type: image
         list: true
+        options:
+          media: projects
       - name: solutionHeading
         label: Judul Bagian Solusi
         type: string

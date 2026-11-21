@@ -7,6 +7,9 @@ on:
       - master
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 concurrency:
   group: deploy-cpanel
   cancel-in-progress: true
@@ -26,6 +29,19 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Optimize newly uploaded images to WebP
+        run: npm run optimize-media
+
+      - name: Commit optimized WebP assets and updated markdown
+        run: |
+          if [ -n "$(git status --porcelain public/assets src/content)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A public/assets src/content
+            git commit -m "chore: optimize uploaded images to webp [skip ci]"
+            git push
+          fi
 
       - name: Build Astro static site
         run: npm run build
